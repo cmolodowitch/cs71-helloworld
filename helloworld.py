@@ -4,8 +4,12 @@ import sys
 
 
 def helloworld():
-    name = sys.argv[1]
-    print(f"Hello, {name}!")
+    if len(sys.argv) < 2:
+        raise ValueError("Expected at least 1 argument")
+
+    for i in range(1, len(sys.argv)):
+        name = sys.argv[i]
+        print(f"Hello, {name}!")
 
 
 if __name__ == '__main__':
